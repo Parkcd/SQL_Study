@@ -103,4 +103,4 @@ create table qna (
     
 create sequence qna_seq start with 1 INCREMENT by 1;
 
-exp bg2/bg2@SID file=backup.dmp
+exp userId=bg2/userPw=bg2@SID file=backup.dmp
