@@ -71,9 +71,9 @@ SELECT COUNT(COMM) comm
 FROM EMP
 WHERE COMM IS NOT NULL;
 -- 5. 부서 번호가 20인 사원의 일사일 중 제일 최근 입사일
-SELECT MAX(hiredate)
-FROM EMP
-WHERE DEPTNO = 20;
+select max(to_char(hiredate))
+from emp
+where deptno = 20;
 
 SELECT
     *
@@ -85,6 +85,17 @@ FROM EMP
 GROUP BY deptno , job
   HAVING AVG(sal) >= 2000
 ORDER BY deptno, job;
+
+select job, round(avg(sal))
+from emp
+group by job
+having avg(sal) >= 1000;
+
+select job, round(avg(sal))
+from emp
+where sal <= 3000
+group by job
+having avg(sal) >= 1000;
 
 -- where절을 사용하면 Group보다 우선 처리함.
 SELECT deptno, job , AVG(sal)
@@ -123,3 +134,4 @@ where e.deptno = d.deptno
 AND e.deptno = 20
 AND e.sal > (SELECT AVG(sal)
              FROM emp);
+             

@@ -1,7 +1,7 @@
 create table member (
     member_uid NUMBER(10) NOT NULL,
     id varchar2(20),
-    pwd varchar2(100),
+    pw varchar2(100),
     name varchar2(40),
     email varchar2(40),
     phonenum varchar2(20),
